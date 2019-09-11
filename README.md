@@ -1,4 +1,4 @@
-This demo help you grasp the basic idea of Flux.
+This demo helps you grasp the basic idea of Flux.
 
 ![Flux](https://pic.superbed.cn/item/5d75e55c451253d178101211.jpg)
 
