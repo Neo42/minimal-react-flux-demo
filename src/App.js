@@ -1,26 +1,45 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import CustomButton from './components/custom-button.component.jsx';
+import ItemList from './components/item-list.component';
+import store from './flux/store';
+import { dispatchedActions } from './flux/actions';
+
+const { addItem, removeItem } = dispatchedActions;
+
+export default class AppRoot extends React.Component {
+  state = { items: store.getItems() };
+  componentWillMount() {
+    this.onChange = this.onChange.bind(this);
+  }
+
+  componentDidMount() {
+    store.addChangeListener(this.onChange);
+  }
+
+  componentWillUnmount() {
+    store.removeChangeListener(this.onChange);
+  }
+
+  onChange() {
+    this.setState({ items: store.getItems() });
+  }
+
+  addItem() {
+    addItem('New Item');
+  }
+
+  removeItem() {
+    removeItem();
+  }
+
+  render() {
+    return (
+      <div className="buttons">
+        <CustomButton onClick={this.addItem}>Add Item</CustomButton>
+        <CustomButton onClick={this.removeItem}>Remove Item</CustomButton>
+        <ItemList items={this.state.items} />
+      </div>
+    );
+  }
 }
-
-export default App;
