@@ -14,7 +14,7 @@ flux.register(function(action) {
       store.addItem(text);
       console.log(
         `%c Action "${type}": ${text} `,
-        'background: #eeeeee; color: #8f71ff'
+        'background: #eeeeee; color: #4bbb8b'
       );
       break;
     case REMOVE_ITEM:
