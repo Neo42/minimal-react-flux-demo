@@ -1,5 +1,5 @@
 import { Dispatcher } from 'flux';
-import { actionTypes } from './constants';
+import actionTypes from './constants';
 import store from './store';
 
 const flux = new Dispatcher();

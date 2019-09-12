@@ -1,6 +1,6 @@
 // import dispatcher after registration.
 import flux from './dispatcher';
-import { actionTypes } from './constants';
+import actionTypes from './constants';
 
 const { ADD_ITEM, REMOVE_ITEM } = actionTypes;
 

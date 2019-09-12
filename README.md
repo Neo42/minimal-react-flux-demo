@@ -1,6 +1,6 @@
 This demo helps you grasp the basic idea of Flux.
 
-![Flux](https://pic.superbed.cn/item/5d75e55c451253d178101211.jpg)
+![Flux](https://ae01.alicdn.com/kf/Had8f008ec7ce42a7ac55fde3635cf6afE.jpg)
 
 # Use
 

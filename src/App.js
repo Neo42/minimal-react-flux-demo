@@ -9,6 +9,7 @@ const { addItem, removeItem } = dispatchedActions;
 
 export default class AppRoot extends React.Component {
   state = { items: store.getItems() };
+
   componentWillMount() {
     this.onChange = this.onChange.bind(this);
   }
