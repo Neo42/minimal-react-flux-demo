@@ -7,12 +7,22 @@ const { ADD_ITEM, REMOVE_ITEM } = actionTypes;
 
 // Dispatcher registering reducer function, calling different methods stored in store, export at last.
 flux.register(function(action) {
-  switch (action.type) {
+  const { type } = action;
+  switch (type) {
     case ADD_ITEM:
-      store.addItem(action.text);
+      const { text } = action.payload;
+      store.addItem(text);
+      console.log(
+        `%c Action "${type}": ${text} `,
+        'background: #eeeeee; color: #8f71ff'
+      );
       break;
     case REMOVE_ITEM:
       store.removeItem();
+      console.log(
+        `%c Action "${type}" `,
+        'background: #eeeeee; color: #e8647c'
+      );
       break;
     default:
       break;

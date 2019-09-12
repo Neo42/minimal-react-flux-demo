@@ -23,7 +23,6 @@ const store = Object.assign(EventEmitter.prototype, {
   },
 
   addItem(text) {
-    console.log(text);
     this.items.push(text);
   },
 

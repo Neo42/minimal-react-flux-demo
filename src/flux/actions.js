@@ -7,7 +7,7 @@ const { ADD_ITEM, REMOVE_ITEM } = actionTypes;
 // Dispatch all actions for further use.
 export const dispatchedActions = {
   addItem: text => {
-    flux.dispatch({ type: ADD_ITEM, text });
+    flux.dispatch({ type: ADD_ITEM, payload: { text } });
   },
   removeItem() {
     flux.dispatch({ type: REMOVE_ITEM });
